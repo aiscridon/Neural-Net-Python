@@ -152,7 +152,9 @@ def Neuron_correct(neuron):
         neuron.dendrites[dendrite].weight += delta_weight
         Neuron_add_error(neuron.dendrites[dendrite].neuron, gradient * neuron.dendrites[dendrite].weight)
         Neuron_correct(neuron.dendrites[dendrite].neuron)
+    # reset the error
     neuron.error = 0
+    # calculate the new potential
     Neuron_calculate(neuron)
 
 
